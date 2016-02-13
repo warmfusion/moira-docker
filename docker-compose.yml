@@ -1,0 +1,49 @@
+moira-nginx:
+  build: web
+  links:
+    - moira-api:moira-api
+  volumes:
+    - ./config/yaml:/etc/moira/
+  ports:
+    - 8080:80
+
+moira-notifier:
+  build: moira-go/
+  links:
+   - redis:redis
+  command: "/moira/bin/cache --config=/config.yml"
+  volumes:
+    - ./config/yaml:/etc/moira/
+
+moira-notifier:
+  build: moira-go/
+  links:
+   - redis:redis
+  command: "/moira/bin/notifier --config=/etc/moira/config.yml"
+  volumes:
+    - ./config/yaml:/etc/moira/
+
+moira-api:
+  build: moira-pip/
+  links:
+   - redis:redis
+  command: moira-api
+  volumes:
+    - ./config/yaml:/etc/moira/
+    - ./config/json:/var/local/www/moira/
+  expose:
+    - 8081
+
+moira-checker:
+  build: moira-pip/
+  links:
+   - redis:redis
+  command: moira-checker
+  volumes:
+    - ./config/yaml:/etc/moira/
+
+
+redis:
+  image: redis
+  expose:
+   - 6379
