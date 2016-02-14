@@ -4,8 +4,9 @@ moira-nginx:
     - moira-api:moira-api
   volumes:
     - ./config/yaml:/etc/moira/
+    - ./config/json:/var/local/www/moira/config/
   ports:
-    - 8080:80
+    - 8080:8080
 
 moira-notifier:
   build: moira-go/
