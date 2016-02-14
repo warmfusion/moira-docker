@@ -21,6 +21,17 @@ And heres what it looks like once you've created it;
 
 ![](docs/trigger_in_error_stage.png)
 
+# Setting up Contacts and Notifications
+
+Setting up a new contact is actually quite simple once you know how;
+
+1. Click 'Anonymous Settings' to see a list of supported contact types
+2. Enter an @User or #room and add it
+3. Setup notification using the interface
+
+![](docs/notification_add_contact.png)
+
+![](docs/notification_setup.png)
 
 # Development
 
