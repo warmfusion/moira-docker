@@ -16,11 +16,12 @@ moira-cache:
   build: moira-go/
   links:
    - redis:redis
-  command: "/moira/bin/cache --config=/config.yml"
+  command: "/moira/bin/cache --config=/etc/moira/config.yml"
   volumes:
     - ./config/yaml:/etc/moira/
   ports:
-    - 2003
+    - 2003:2003
+    - 2003/udp:2003/udp
 
 # Notifier is a Go application that watches for generated events. 
 # Notifier is responsible for scheduling and sending notifications, 

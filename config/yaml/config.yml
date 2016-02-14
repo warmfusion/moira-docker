@@ -4,7 +4,7 @@ redis:
 
 # Base log directory for Moira API and Moira Checker microservices
 worker:
-  log_dir: /var/log/moira/worker
+  log_dir: /var/log/moira/
 
 api:
   port: 8081
@@ -12,7 +12,7 @@ api:
 
 # Moira microservices will send their own metrics to this address
 graphite:
-  uri: graphite-relay:2003
+  uri: moira-cache:2003
   prefix: DevOps.moira
   interval: 30
 
@@ -52,7 +52,7 @@ notifier:
 
 
 cache:
-  log_file: /var/log/moira/cache/cache.log
+  log_file: /dev/stdout
   listen: ':2003' # listen on all interfaces
   retention-config: /etc/moira/cache/storage-schemas.conf
   pid: /var/run/moira-cache.pid
