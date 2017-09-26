@@ -1,4 +1,4 @@
-FROM golang:1.6
+FROM golang:1.7
 
 # http://moira.readthedocs.org/en/latest/quickstart.html
 
