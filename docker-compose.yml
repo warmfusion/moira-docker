@@ -21,7 +21,7 @@ moira-cache:
     - ./config/yaml:/etc/moira/
   ports:
     - 2003:2003
-    - 2003/udp:2003/udp
+    - 2003:2003/udp
 
 # Notifier is a Go application that watches for generated events. 
 # Notifier is responsible for scheduling and sending notifications, 
