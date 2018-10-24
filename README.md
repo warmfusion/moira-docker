@@ -1,4 +1,13 @@
 
+
+# OBSOLETE
+
+This project has been superceded by See https://github.com/moira-alert/moira
+
+Do not use this repo for anything.
+
+Thanks.
+
 # Setting up Triggers
 
 
